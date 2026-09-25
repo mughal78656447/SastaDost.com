@@ -1,140 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 body {
-    background-color: #0f172a;
-    color: #f8fafc;
+    background: #080710;
+    color: #ffffff;
+    overflow-x: hidden;
 }
 
+/* ---------- HEADER ---------- */
 header {
-    background-color: #1e293b;
-    padding: 15px 5%;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 20px 8%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 2px solid #334155;
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
 .logo {
-    font-size: 24px;
-    font-weight: bold;
-    color: #38bdf8;
+    font-size: 26px;
+    font-weight: 700;
+    color: #00f2fe;
+    letter-spacing: 1px;
 }
 
 .logo span {
-    color: #f43f5e;
+    color: #ff007f;
 }
 
-.tagline {
-    font-size: 13px;
-    color: #94a3b8;
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 14px;
+    transition: 0.3s;
 }
 
+.nav-links a:hover {
+    color: #00f2fe;
+}
+
+/* ---------- HERO SECTION ---------- */
 .hero {
     text-align: center;
-    padding: 40px 20px;
-    background: linear-gradient(135deg, #1e1b4b, #312e81);
-    border-bottom: 1px solid #4338ca;
+    padding: 60px 20px;
+    background: radial-gradient(circle, rgba(0,242,254,0.15) 0%, rgba(8,7,16,1) 80%);
 }
 
 .hero h1 {
-    font-size: 2rem;
-    color: #f43f5e;
-    margin-bottom: 10px;
+    font-size: 2.5rem;
+    background: linear-gradient(45deg, #ff007f, #00f2fe);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: fadeIn 1.5s ease-in-out;
 }
 
 .hero p {
-    color: #cbd5e1;
+    color: #a0a0a0;
+    margin-top: 10px;
+    font-size: 16px;
 }
 
+/* ---------- GRID & CARDS ---------- */
 .container {
     max-width: 1200px;
-    margin: 30px auto;
+    margin: 40px auto;
     padding: 0 20px;
-}
-
-.section-title {
-    margin-bottom: 20px;
-    font-size: 22px;
-    border-left: 4px solid #38bdf8;
-    padding-left: 10px;
 }
 
 .friends-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 25px;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
 }
 
 .card {
-    background-color: #1e293b;
-    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
     overflow: hidden;
     position: relative;
-    border: 1px solid #334155;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    backdrop-filter: blur(5px);
+    transition: all 0.4s ease;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
 }
 
 .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+    transform: translateY(-10px) scale(1.02);
+    border-color: #00f2fe;
+    box-shadow: 0 0 20px rgba(0, 242, 254, 0.4);
 }
 
 .badge {
     position: absolute;
-    top: 10px;
-    right: 10px;
-    background-color: #f43f5e;
-    color: white;
-    padding: 5px 10px;
-    font-size: 12px;
-    font-weight: bold;
+    top: 12px;
+    right: 12px;
+    background: linear-gradient(45deg, #ff007f, #7928ca);
+    color: #fff;
+    padding: 4px 12px;
+    font-size: 11px;
+    font-weight: 600;
     border-radius: 20px;
     z-index: 10;
+    box-shadow: 0 0 10px rgba(255, 0, 127, 0.5);
 }
 
-/* تصویر کو پورا دکھانے کی ترامیم */
 .card img {
     width: 100%;
-    height: 280px;
-    object-fit: contain; /* اس سے تصویر کٹے گی نہیں بلکہ پوری فٹ آئے گی */
-    background-color: #0f172a;
-    padding: 5px;
+    height: 260px;
+    object-fit: contain;
+    background: #10101a;
+    padding: 8px;
+    transition: transform 0.5s ease;
+}
+
+.card:hover img {
+    transform: scale(1.05);
 }
 
 .card-body {
-    padding: 15px;
+    padding: 20px;
 }
 
 .card-body h3 {
-    color: #f8fafc;
-    font-size: 20px;
+    font-size: 22px;
+    color: #fff;
+    margin-bottom: 5px;
 }
 
 .role {
-    color: #94a3b8;
-    font-size: 14px;
-    margin-bottom: 8px;
+    color: #00f2fe;
+    font-size: 13px;
+    margin-bottom: 10px;
 }
 
 .rating {
-    color: #facc15;
+    color: #ffd700;
     font-size: 14px;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
 }
 
 .price {
     font-size: 16px;
     margin-bottom: 15px;
+    color: #e0e0e0;
 }
 
 .price span {
-    color: #4ade80;
-    font-weight: bold;
+    color: #00ff88;
+    font-weight: 700;
 }
 
 .skills-list {
@@ -144,15 +168,18 @@ header {
 
 .skills-list li {
     font-size: 13px;
-    color: #cbd5e1;
-    margin-bottom: 5px;
+    color: #bbb;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
 .skills-list i {
-    color: #38bdf8;
-    margin-right: 5px;
+    color: #ff007f;
 }
 
+/* ---------- BUTTONS ---------- */
 .btn-group {
     display: flex;
     gap: 10px;
@@ -160,97 +187,116 @@ header {
 
 .btn {
     flex: 1;
-    padding: 10px;
+    padding: 10px 15px;
     border: none;
-    border-radius: 6px;
+    border-radius: 8px;
     cursor: pointer;
     text-align: center;
     text-decoration: none;
-    font-weight: bold;
-    font-size: 14px;
+    font-weight: 600;
+    font-size: 13px;
+    transition: 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
 }
 
 .btn-primary {
-    background-color: #22c55e;
+    background: linear-gradient(45deg, #25d366, #128c7e);
     color: white;
+    box-shadow: 0 0 10px rgba(37, 211, 102, 0.3);
+}
+
+.btn-primary:hover {
+    box-shadow: 0 0 18px rgba(37, 211, 102, 0.7);
+    transform: translateY(-2px);
 }
 
 .btn-secondary {
-    background-color: #3b82f6;
+    background: rgba(255, 255, 255, 0.1);
     color: white;
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-.btn:hover {
-    opacity: 0.9;
+.btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: #00f2fe;
 }
 
-/* Modal Popup Section */
+/* ---------- MODAL POPUP ---------- */
 .modal {
-    display: none; /* شروعات میں چھپا رہے گا */
+    display: none;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(8px);
     justify-content: center;
     align-items: center;
     padding: 20px;
     z-index: 1000;
+    animation: fadeIn 0.3s ease;
 }
 
 .modal-content {
-    background-color: #1e293b;
-    padding: 25px;
-    border-radius: 12px;
-    max-width: 500px;
+    background: #12121f;
+    padding: 30px;
+    border-radius: 20px;
+    max-width: 480px;
     width: 100%;
     position: relative;
-    border: 1px solid #38bdf8;
+    border: 1px solid #00f2fe;
+    box-shadow: 0 0 30px rgba(0, 242, 254, 0.3);
     text-align: center;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.8);
 }
 
 .modal-img {
     width: 100%;
-    max-height: 250px;
+    max-height: 220px;
     object-fit: contain;
-    border-radius: 8px;
+    border-radius: 12px;
     margin-bottom: 15px;
-    background-color: #0f172a;
+    background: #080710;
 }
 
 .close-btn {
     position: absolute;
-    top: 10px;
-    right: 15px;
-    font-size: 28px;
+    top: 15px;
+    right: 20px;
+    font-size: 26px;
     cursor: pointer;
-    color: #f43f5e;
-    font-weight: bold;
+    color: #ff007f;
 }
 
 .modal-warning {
-    margin-top: 15px;
-    background: #451a03;
-    color: #fde047;
+    margin: 15px 0;
+    background: rgba(255, 0, 127, 0.1);
+    border: 1px solid #ff007f;
+    color: #ff77a9;
     padding: 10px;
-    border-radius: 6px;
+    border-radius: 8px;
     font-size: 12px;
 }
 
-.btn-block {
-    display: block;
-    width: 100%;
-    margin-top: 15px;
+/* ---------- FOOTER ---------- */
+footer {
+    background: rgba(255, 255, 255, 0.02);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    text-align: center;
+    padding: 25px;
+    color: #888;
+    font-size: 13px;
+    margin-top: 60px;
 }
 
-footer {
-    text-align: center;
-    padding: 20px;
-    background-color: #0f172a;
-    color: #64748b;
-    font-size: 13px;
-    border-top: 1px solid #1e293b;
-    margin-top: 40px;
+footer span {
+    color: #ff007f;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
 }

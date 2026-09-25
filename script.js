@@ -6,11 +6,9 @@ function openDetails(imgSrc, name, role, condition, price, desc, phone) {
     document.getElementById('modal-price').innerText = price;
     document.getElementById('modal-desc').innerText = desc;
 
-    // WhatsApp Message
-    const text = encodeURIComponent(`سلام! مجھے ${name} خریدنا ہے۔ اس کی قیمت ${price} ہی ہے نا؟`);
+    const text = encodeURIComponent(`سلام! مجھے ${name} خریدنا ہے۔ اس کی قیمت ${price} ہی ہے؟`);
     document.getElementById('modal-wa-link').href = `https://wa.me/${phone}?text=${text}`;
 
-    // Modal Display
     document.getElementById('detailsModal').style.display = 'flex';
 }
 
@@ -18,7 +16,6 @@ function closeDetails() {
     document.getElementById('detailsModal').style.display = 'none';
 }
 
-// Modal closing when clicking outside the box
 window.onclick = function(event) {
     const modal = document.getElementById('detailsModal');
     if (event.target == modal) {
